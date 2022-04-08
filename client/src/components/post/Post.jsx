@@ -1,5 +1,5 @@
 import "./post.css";
-import { MoreVert } from "@material-ui/icons";
+import { FavoriteOutlined, MoreVert } from "@material-ui/icons";
 import { publicRequest, userRequest } from "../../requestMethod";
 import { useEffect, useState } from "react";
 import {Link, useHistory} from 'react-router-dom'
@@ -98,6 +98,17 @@ const ImageContainer = styled.div`
       }
     } `
     
+    const Icon = styled.div`
+       width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    `
 const ImageItem = styled.div`
   cursor: pointer;
 `
@@ -187,8 +198,15 @@ export default function Post({ post }) {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
+            {
+              isLiked ? <>
+                 <img className="likeIcon" src={   BF +"heart.png" } onClick={likeHandler} alt="" /> 
+              </>: <>
+              <Icon ><FavoriteOutlined style={{cursor : 'pointer'}} onClick={likeHandler} /> </Icon>
+              </>
+            }
            
-            <img className="likeIcon" src={isLiked ?  BF +"heart.png" :BF+  "heart.png"} onClick={likeHandler} alt="" />
+            
             <span className="postLikeCounter">{like} people like it</span>
           </div>
           <div className="postBottomRight">

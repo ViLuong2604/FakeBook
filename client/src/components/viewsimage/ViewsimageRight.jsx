@@ -1,5 +1,5 @@
 
-import { ArrowDropDown, Menu, Message, NotificationImportant, Notifications } from '@material-ui/icons';
+import { ArrowDropDown, FavoriteOutlined, Menu, Message, NotificationImportant, Notifications } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -108,6 +108,17 @@ const SpanCmt = styled.span`
     /* margin-right: 15px; */
    
 `
+const IconLike = styled.div`
+       width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    /* background-color: white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    `
 export default function ViewsimageRight({post}) {
    const[user,setUser] = useState({})
    const [like,setLike] = useState(null);
@@ -159,7 +170,17 @@ export default function ViewsimageRight({post}) {
     </MainContainer>
     <Bottom >
       <BottomLeft>
-         <Img onClick={likeHandler} src={isLiked ?  BF +"heart.png" :  BF +"heart.png"} />
+        {
+          isLiked ? <>
+           <Img onClick={likeHandler} src={ BF +"heart.png"} />
+          </> : <>
+          <IconLike>
+          <FavoriteOutlined onClick={likeHandler} style={{color : 'white'}}/>
+        </IconLike>
+          </>
+        }
+      
+        
          <Span >{like} people like it</Span>
       </BottomLeft>
       <BottomRight>

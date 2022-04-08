@@ -63,7 +63,7 @@ export default function Right() {
     <Container>
         <User  onClick={()=> history.push(`/profile/${currentUser._id}`)}>
            <UserName> {currentUser.username}</UserName>
-           <Avatar src={currentUser?.profilePicture || `noAvatar.jpg` } />
+           <Avatar src={currentUser?.profilePicture ||BF+ `noAvatar.jpg` } />
         </User>
         <Other>
           <Icons><MenuOutlined /> </Icons>

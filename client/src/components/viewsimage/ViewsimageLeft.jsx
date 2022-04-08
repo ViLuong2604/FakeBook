@@ -107,7 +107,7 @@ export default function ViewsimageLeft({post,setMaxView,maxView}) {
    <Container>
       <IconsLeft> 
           <Icon onClick={()=> history.push('/')}> <Close style={{fontSize : '30px'}} />  </Icon>
-           <Icon  ><Facebook style={{fontSize : '40px',color : 'blue'}} /> </Icon>
+           <Icon  ><Facebook style={{fontSize : '40px'}} /> </Icon>
            
       </IconsLeft>
       <Arrow onClick={ ()=>images.length >0 && HandleSlice('del')} > <ArrowBackIos /> </Arrow>

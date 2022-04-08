@@ -92,6 +92,7 @@ export default function Left() {
   const typingTimeoutRef = useRef(null);
   const typingdisplay = useRef(null);
   const {currentUser} = useSelector(state => state.user);
+  const BF = process.env.REACT_APP_PUBLIC_FOLDER;
    const uhistory = useHistory();
   //  const[display,setDisplay]  = useState(null)
    const  {history,display} = useSelector(state =>  state.history);
@@ -136,7 +137,7 @@ export default function Left() {
   // 
   return (
     <Container >
-       <Logo onClick={()=> uhistory.push(`/`)} src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png' />
+       <Logo onClick={()=> uhistory.push(`/`)} src={BF +'facebook_profile_image.png'} />
        <Search >
          <Icon  >
             <SearchOutlined />
