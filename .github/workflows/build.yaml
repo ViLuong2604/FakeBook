@@ -1,0 +1,11 @@
+name: hello-work
+on:
+  push:
+    branches: [main]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: action/checkout@v2
